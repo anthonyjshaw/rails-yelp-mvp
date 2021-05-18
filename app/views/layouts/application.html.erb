@@ -10,6 +10,18 @@
   </head>
 
   <body>
+<nav class="navbar navbar-light bg-light justify-content-between">
+
+  <p><%= link_to "Home", restaurants_path, class: 'navbar-brand' %> </p>
+  <p><%= link_to "Add a restaurant", new_restaurant_path %> </p>
+  <form class="form-inline my-2 my-lg-0" action="/restaurants/search" method="get">
+    <input type="text" class="form-control mr-sm-2" placeholder="Search" value="<%= params[:name] %>" name="name">
+    <button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    </form>
+</nav>
     <%= yield %>
+
+
   </body>
+
 </html>

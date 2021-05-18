@@ -1,11 +1,12 @@
+
 <%= simple_form_for(restaurant) do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :address %>
-<%= f.text_field :address %>
-<%= f.label :phone_number %>
-<%= f.text_field :phone_number %>
-<%= f.label :category%>
-<%= f.text_field :category %>
-<%= f.submit "Add Restaurant" %>
+
+<%= f.input :name %>
+
+<%= f.input :address %>
+
+<%= f.input :phone_number %>
+
+<%= f.select :category, category: Restaurant::CATEGORIES%>
+<%= f.submit "Add Restaurant"%>
 <% end %>

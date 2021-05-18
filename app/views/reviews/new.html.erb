@@ -1,4 +1,15 @@
+<div class="container">
+<h1>Add a review</h1>
+
 <%= simple_form_for [ @restaurant, @review ] do |f| %>
-  <%= f.input :content %>
+  <div class="form-group">
+  <%= f.input :content, class: "form-control"%>
+</div>
+  <div class="form-group">
+    <div class="btn-group-vertical">
+      <%= f.select :rating, "Choose a rating from 0-5": Review::RATING  %>
+    </div>
+  </div>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
+</div>

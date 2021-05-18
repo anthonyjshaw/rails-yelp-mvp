@@ -1,3 +1,18 @@
-<%= @restaurant.name %>
 
-<%= link_to "Back to all restaurants", restaurants_path %>
+<div class="container">
+
+<h1> <%= @restaurant.name %></h1>
+
+<ul>
+<% @restaurant.reviews.each do |review| %>
+  <li><%= review.content %> |
+   <% review.rating.times do %>
+    <%= sanitize '<i class="far fa-star"></i>' %>
+    <% end %>
+  </li>
+<% end %>
+</ul>
+
+<hr>
+<%= link_to "add a review", new_restaurant_review_path(@restaurant) %>
+</div>
