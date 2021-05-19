@@ -1,8 +1,8 @@
-<div class="container">
-<h1>Add a review</h1>
+<div class="container justify-content">
+<h1>Add a review for  <%= @restaurant.name %></h1>
 
 <%= simple_form_for [ @restaurant, @review ] do |f| %>
-  <div class="form-group">
+  <div class="form-group col-md-6">
   <%= f.input :content, class: "form-control"%>
 </div>
   <div class="form-group">

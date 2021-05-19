@@ -13,3 +13,49 @@
 @import "pages/index";
 
 
+
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.info {
+  display: flex;
+  justify-content: center;
+}
+
+.headings-sans-serif {
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.review {
+  border-left: 1px  solid black;
+  padding: 10px 10px;
+  margin: 10px 0;
+}
+
+select {
+
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0E0000;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 10px 0;
+}

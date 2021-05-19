@@ -4,6 +4,7 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurants, only: %i[show update destroy]
   def index
     @restaurants = Restaurant.all
+    @rating = '<i class="far fa-star"></i>'
   end
 
   def show
@@ -27,11 +28,11 @@ class RestaurantsController < ApplicationController
     @results = Restaurant.where('name LIKE ?', "%#{params[:name]}%")
     @results = if params[:name].empty?
                  @message = "You didn't enter anything!"
-                 @count = 0
-                 []
+                 zero_results
                elsif @results.count.zero?
                  @message = "No results for #{params[:name]}."
-                 []
+                 @count = 0
+                 zero_results
                else
                  @count = @results.count
                  @message = "Here are all the results for #{params[:name]}:"
@@ -41,6 +42,11 @@ class RestaurantsController < ApplicationController
 
 
   private
+
+  def zero_results
+    @count = 0
+    []
+  end
 
   def set_restaurants
     @restaurant = Restaurant.find(params[:id])

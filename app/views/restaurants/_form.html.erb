@@ -1,12 +1,9 @@
-
+<div class="col-4">
 <%= simple_form_for(restaurant) do |f| %>
-
-<%= f.input :name %>
-
-<%= f.input :address %>
-
-<%= f.input :phone_number %>
-
-<%= f.select :category, category: Restaurant::CATEGORIES%>
-<%= f.submit "Add Restaurant"%>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
+    <%= f.select :category, category: Restaurant::CATEGORIES %>
+<%= f.submit "Add Restaurant", class: 'btn btn-primary align-items-center'%>
 <% end %>
+</div>

@@ -1,18 +1,27 @@
 
 <div class="container">
 
+<div class="info">
 <h1> <%= @restaurant.name %></h1>
-
+<p> <%= @restaurant.address %> </p>
+<p> <%= @restaurant.phone_number %> </p>
+</div>
 <ul>
 <% @restaurant.reviews.each do |review| %>
-  <li><%= review.content %> |
+  <li class="review "><%= review.content %> |
    <% review.rating.times do %>
-    <%= sanitize '<i class="far fa-star"></i>' %>
+    <small><%= sanitize '<i class="far fa-star"></i>' %></small>
     <% end %>
   </li>
+  <br>
 <% end %>
 </ul>
 
 <hr>
-<%= link_to "add a review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Add a review", new_restaurant_review_path(@restaurant) %>
+
+
+
+
 </div>
+

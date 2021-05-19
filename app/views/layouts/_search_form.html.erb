@@ -1,0 +1,12 @@
+<%= form_with url: restaurants_search_path, html: {class: "form-inline"}, method: :get do |f| %>
+ <div class="row">
+    <div class="col">
+  <%= f.text_field :name, class: 'form-control' %>
+</div>
+<div class="col">
+  <%= f.submit "Search", class: 'btn btn-outline-success my-2 my-sm-0' %>
+  </div>
+  </div>
+<% end %>
+
+

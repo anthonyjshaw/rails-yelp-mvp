@@ -2,8 +2,10 @@
 
 Rails.application.routes.draw do
   root to: 'restaurants#index'
-  get 'restaurants/search', to: 'restaurants#search'
-  resources :restaurants do
+  resources :restaurants, only: %i[new create show index] do
+    collection do
+      get :search, as: :search
+    end
     resources :reviews, only: %i[new create]
   end
 end

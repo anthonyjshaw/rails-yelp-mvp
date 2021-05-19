@@ -1,16 +1,27 @@
 
-<div class="container">
+<div class="container mt-3 mb-3">
 
-<h1>Restaurants</h1>
+<h1 class=" mb-3 headings-sans-serif">Restaurants</h1>
 
 <ul>
   <% @restaurants.each do |restaurant| %>
     <li>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
-      | <%= restaurant.address %>
+      | <%= restaurant.address %> | <%= restaurant.category.capitalize %> | Average rating: <%sum = restaurant.reviews.map { |review|  review.rating.to_f } %>
+      <% if sum == [] %>
+       <small> (No reviews. <%= avg = link_to "Add a review", new_restaurant_review_path(restaurant) %> )</small>
+      <% else %>
+        <% avg = sum.sum / sum.length %>
+        <% avg.round.times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <% end %>
+
     </li>
+    <br>
   <% end %>
 </ul>
 <hr>
 </div>
+
 
